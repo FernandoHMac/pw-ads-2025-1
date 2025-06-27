@@ -17,12 +17,11 @@ export default function MainMenu() {
 
   return (
     <div>
-      <IconButton
-        edge="start"
-        color="inherit"
-        aria-label="menu"
+      <IconButton 
+        edge="start" 
+        color="inherit" 
+        aria-label="menu" 
         sx={{ mr: 2 }}
-        id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
@@ -35,22 +34,20 @@ export default function MainMenu() {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        slotProps={{
-          list: {
-            'aria-labelledby': 'basic-button',
-          }
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem
+        <MenuItem 
           onClick={handleClose}
           component={Link}
           to="/"
           divider
         >
-          Página inicial
+          Início
         </MenuItem>
 
-        <MenuItem
+        <MenuItem 
           onClick={handleClose}
           component={Link}
           to="/customers"
@@ -58,7 +55,7 @@ export default function MainMenu() {
           Listagem de clientes
         </MenuItem>
 
-        <MenuItem
+        <MenuItem 
           onClick={handleClose}
           component={Link}
           to="/customers/new"
@@ -66,21 +63,30 @@ export default function MainMenu() {
           Cadastro de clientes
         </MenuItem>
 
-        <MenuItem
+        <MenuItem 
           onClick={handleClose}
           component={Link}
           to="/cars"
         >
-          Listagem de veículos
+          Listagem de carros
         </MenuItem>
 
-        <MenuItem
+        <MenuItem 
           onClick={handleClose}
           component={Link}
           to="/cars/new"
         >
-          Cadastro de veículos
+          Cadastro de carros
         </MenuItem>
+
+        <MenuItem 
+          onClick={handleClose}
+          component={Link}
+          to="/about"
+        >
+          Sobre
+        </MenuItem>
+        
       </Menu>
     </div>
   );
